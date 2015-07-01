@@ -9,29 +9,29 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
 - (void)testCreatesABoardOfSize9 {
     Board *testBoard = [[Board alloc] init];
+    [testBoard createBoard:3];
+
     NSDictionary *gameboard = @{
                                 @1: @" ", @2: @" ", @3: @" ",
                                 @4: @" ", @5: @" ", @6: @" ",
                                 @7: @" ", @8: @" ", @9: @" "
-                               };
+                                };
     
-    [testBoard createBoard:3];
-    
-    XCTAssertEqualObjects([testBoard gameboard], gameboard, "creates a gameboard with 9 cells.");
+    XCTAssertEqualObjects(testBoard.gameboard, gameboard, "creates a gameboard with 9 cells.");
 }
 
 - (void)testCreatesABoardOfSize16 {
     Board *testBoard = [[Board alloc] init];
+    [testBoard createBoard:4];
+
     NSDictionary *gameboard = @{
                                 @1: @" ", @2: @" ", @3: @" ", @4: @" ",
                                 @5: @" ", @6: @" ", @7: @" ", @8: @" ",
@@ -39,9 +39,15 @@
                                 @13: @" ", @14: @" ", @15: @" ", @16: @" "
                                 };
     
-    [testBoard createBoard:4];
-    
-    XCTAssertEqualObjects([testBoard gameboard], gameboard, "creates a gameboard with 16 cells.");
+    XCTAssertEqualObjects(testBoard.gameboard, gameboard, "creates a gameboard with 16 cells.");
+}
+
+- (void)testPlacesAPieceOnTheBoard {
+    Board *testBoard = [[Board alloc] init];
+    [testBoard createBoard:3];
+    [testBoard placePlayerPiece:@"X" atCellLocation:@1];
+
+    XCTAssertEqualObjects(testBoard.gameboard[@1], @"X", "places a piece on the gameboard.");
 }
 
 @end

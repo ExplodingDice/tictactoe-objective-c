@@ -3,7 +3,6 @@
 
 @implementation Board : NSObject
 
-// This is where you can define functions and properties
 - (NSMutableDictionary*)gameboard {
     return _gameboard;
 }
@@ -26,6 +25,10 @@
         NSNumber *cellNumber = [NSNumber numberWithInteger:num];
         _gameboard[cellNumber] = @" ";
     }];
+}
+
+- (void)placePlayerPiece:(NSString *)playerPiece atCellLocation:(NSNumber *)cellLocation {
+    [_gameboard setObject:playerPiece forKey:cellLocation];
 }
 
 @end
