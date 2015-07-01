@@ -2,21 +2,24 @@
 #import <XCTest/XCTest.h>
 #import "Board.h"
 
-@interface BoardTest : XCTestCase
+@interface BoardTest : XCTestCase {
+    Board *testBoard;
+}
 @end
 
 @implementation BoardTest
 
 - (void)setUp {
     [super setUp];
+    testBoard = [[Board alloc] init];
 }
 
 - (void)tearDown {
     [super tearDown];
+    testBoard = nil;
 }
 
 - (void)testCreatesABoardOfSize9 {
-    Board *testBoard = [[Board alloc] init];
     [testBoard createBoard:3];
 
     NSDictionary *gameboard = @{
@@ -29,7 +32,6 @@
 }
 
 - (void)testCreatesABoardOfSize16 {
-    Board *testBoard = [[Board alloc] init];
     [testBoard createBoard:4];
 
     NSDictionary *gameboard = @{
@@ -43,7 +45,6 @@
 }
 
 - (void)testPlacesAPieceOnTheBoard {
-    Board *testBoard = [[Board alloc] init];
     [testBoard createBoard:3];
     [testBoard placePlayerPiece:@"X" atCellLocation:@1];
 
