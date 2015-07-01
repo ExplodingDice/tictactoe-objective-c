@@ -1,17 +1,9 @@
-//
-//  main.m
-//  tictactoe
-//
-//  Created by Diana on 6/27/15.
-//  Copyright (c) 2015 Exploding Dice. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "Board.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+
     }
     return 0;
 }
