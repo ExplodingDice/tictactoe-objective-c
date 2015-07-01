@@ -31,4 +31,8 @@
     [_gameboard setObject:playerPiece forKey:cellLocation];
 }
 
+- (BOOL)isCellOccupied:(NSNumber *)cellLocation {
+    return (![_gameboard[cellLocation] isEqualToString:@" "]);
+}
+
 @end

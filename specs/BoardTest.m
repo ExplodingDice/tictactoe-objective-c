@@ -51,4 +51,17 @@
     XCTAssertEqualObjects(testBoard.gameboard[@1], @"X", "places a piece on the gameboard.");
 }
 
+- (void)testReturnsTrueIfTheCellIsOccupied {
+    [testBoard createBoard:3];
+    [testBoard placePlayerPiece:@"X" atCellLocation:@5];
+
+    XCTAssertTrue([testBoard isCellOccupied:@5], "evaluates true if a cell is occupied.");
+}
+
+- (void)testReturnsFalseIfTheCellIsNotOccupied {
+    [testBoard createBoard:3];
+
+    XCTAssertFalse([testBoard isCellOccupied:@4], "evaluates false if a cell is not occupied.");
+}
+
 @end
