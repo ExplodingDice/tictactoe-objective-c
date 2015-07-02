@@ -35,4 +35,23 @@
     return (![_gameboard[cellLocation] isEqualToString:@" "]);
 }
 
+- (NSArray*)sortByNumValue:(NSMutableArray *)unsortedCollection {
+    return [unsortedCollection sortedArrayUsingDescriptors:
+     @[[NSSortDescriptor
+        sortDescriptorWithKey:@"intValue"
+        ascending:YES]]];
+}
+
+- (NSArray*)availableCells {
+    NSMutableArray *unsortedAvailableCells = [NSMutableArray array];
+
+    for (id cellLocation in _gameboard)
+    {
+        if (![self isCellOccupied:cellLocation])
+            [unsortedAvailableCells addObject:cellLocation];
+    }
+
+    return [self sortByNumValue:unsortedAvailableCells];
+}
+
 @end

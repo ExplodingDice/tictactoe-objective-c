@@ -8,6 +8,7 @@
 - (void)createBoard:(int)dimensions;
 - (void)placePlayerPiece:(NSString*)playerPiece atCellLocation:(NSNumber*)cellLocation;
 - (BOOL)isCellOccupied:(NSNumber*)cellLocation;
+- (NSArray*)availableCells;
 
 @end
 

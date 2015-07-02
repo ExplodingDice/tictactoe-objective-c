@@ -64,4 +64,13 @@
     XCTAssertFalse([testBoard isCellOccupied:@4], "evaluates false if a cell is not occupied.");
 }
 
+- (void)testAllAvailableCellLocations {
+    [testBoard createBoard:3];
+    [testBoard placePlayerPiece:@"X" atCellLocation:@3];
+    [testBoard placePlayerPiece:@"O" atCellLocation:@8];
+    NSArray *keyList = @[@1, @2, @4, @5, @6, @7, @9];
+
+    XCTAssertEqualObjects([testBoard availableCells], keyList, "returns a sorted collection of keys from all available cell locations.");
+}
+
 @end
