@@ -2,21 +2,24 @@
 #import <XCTest/XCTest.h>
 #import "Board.h"
 
-@interface BoardTest : XCTestCase
+@interface BoardTest : XCTestCase {
+    Board *testBoard;
+}
 @end
 
 @implementation BoardTest
 
 - (void)setUp {
     [super setUp];
+    testBoard = [[Board alloc] init];
 }
 
 - (void)tearDown {
     [super tearDown];
+    testBoard = nil;
 }
 
 - (void)testCreatesABoardOfSize9 {
-    Board *testBoard = [[Board alloc] init];
     [testBoard createBoard:3];
 
     NSDictionary *gameboard = @{
@@ -29,7 +32,6 @@
 }
 
 - (void)testCreatesABoardOfSize16 {
-    Board *testBoard = [[Board alloc] init];
     [testBoard createBoard:4];
 
     NSDictionary *gameboard = @{
@@ -43,11 +45,32 @@
 }
 
 - (void)testPlacesAPieceOnTheBoard {
-    Board *testBoard = [[Board alloc] init];
     [testBoard createBoard:3];
     [testBoard placePlayerPiece:@"X" atCellLocation:@1];
 
     XCTAssertEqualObjects(testBoard.gameboard[@1], @"X", "places a piece on the gameboard.");
+}
+
+- (void)testReturnsTrueIfTheCellIsOccupied {
+    [testBoard createBoard:3];
+    [testBoard placePlayerPiece:@"X" atCellLocation:@5];
+
+    XCTAssertTrue([testBoard isCellOccupied:@5], "evaluates true if a cell is occupied.");
+}
+
+- (void)testReturnsFalseIfTheCellIsNotOccupied {
+    [testBoard createBoard:3];
+
+    XCTAssertFalse([testBoard isCellOccupied:@4], "evaluates false if a cell is not occupied.");
+}
+
+- (void)testAllAvailableCellLocations {
+    [testBoard createBoard:3];
+    [testBoard placePlayerPiece:@"X" atCellLocation:@3];
+    [testBoard placePlayerPiece:@"O" atCellLocation:@8];
+    NSArray *keyList = @[@1, @2, @4, @5, @6, @7, @9];
+
+    XCTAssertEqualObjects([testBoard availableCells], keyList, "returns a sorted collection of keys from all available cell locations.");
 }
 
 @end
