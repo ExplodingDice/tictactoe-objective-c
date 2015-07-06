@@ -111,5 +111,18 @@
     return winner;
 }
 
+- (BOOL)fullBoard {
+    for (NSArray *possibility in [self possibilities]) {
+        if ([possibility containsObject:@" "]) {
+            return NO;
+        }
+    }
+
+    return YES;
+}
+
+- (BOOL)isDraw {
+    return (![self getWinningPiece] && [self fullBoard]);
+}
 
 @end

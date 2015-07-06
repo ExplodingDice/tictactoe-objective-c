@@ -9,6 +9,7 @@
 
 - (id)initWithBoard:(Board *)board;
 - (NSString *)getWinningPiece;
+- (BOOL)isDraw;
 
 @end
 
