@@ -3,7 +3,7 @@
 
 @implementation Board : NSObject
 
-- (NSMutableDictionary*)gameboard {
+- (NSMutableDictionary *)gameboard {
     return _gameboard;
 }
 
@@ -11,7 +11,7 @@
     return pow(dimensions, 2);
 }
 
-- (NSIndexSet*)getAllCellNumbers:(int)dimensions {
+- (NSIndexSet *)getAllCellNumbers:(int)dimensions {
     int size = [self calculateSizeBasedOn:dimensions];
     
     return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, size)];
@@ -35,14 +35,14 @@
     return (![self.gameboard[cellLocation] isEqualToString:@" "]);
 }
 
-- (NSArray*)sortByNumValue:(NSMutableArray *)unsortedCollection {
+- (NSArray *)sortByNumValue:(NSMutableArray *)unsortedCollection {
     return [unsortedCollection sortedArrayUsingDescriptors:
      @[[NSSortDescriptor
         sortDescriptorWithKey:@"intValue"
         ascending:YES]]];
 }
 
-- (NSArray*)availableCells {
+- (NSArray *)availableCells {
     NSMutableArray *unsortedAvailableCells = [NSMutableArray array];
 
     for (id cellLocation in self.gameboard)

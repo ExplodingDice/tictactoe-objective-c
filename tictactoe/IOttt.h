@@ -3,8 +3,8 @@
 
 @interface IOttt : NSObject
 
-- (NSString*)getIn;
-- (void)putOut:(NSString*)message;
+- (NSString *)getIn;
+- (void)putOut:(NSString *)message;
 
 @end
 
