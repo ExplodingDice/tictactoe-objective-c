@@ -19,20 +19,20 @@
 
 - (void)createBoard:(int)dimensions {
     NSIndexSet *cellNumbers = [self getAllCellNumbers:dimensions];
-    _gameboard = [[NSMutableDictionary alloc] init];
+    self.gameboard = [[NSMutableDictionary alloc] init];
     
     [cellNumbers enumerateIndexesUsingBlock:^(NSUInteger num, BOOL *stop) {
         NSNumber *cellNumber = [NSNumber numberWithInteger:num];
-        _gameboard[cellNumber] = @" ";
+        self.gameboard[cellNumber] = @" ";
     }];
 }
 
 - (void)placePlayerPiece:(NSString *)playerPiece atCellLocation:(NSNumber *)cellLocation {
-    [_gameboard setObject:playerPiece forKey:cellLocation];
+    [self.gameboard setObject:playerPiece forKey:cellLocation];
 }
 
 - (BOOL)isCellOccupied:(NSNumber *)cellLocation {
-    return (![_gameboard[cellLocation] isEqualToString:@" "]);
+    return (![self.gameboard[cellLocation] isEqualToString:@" "]);
 }
 
 - (NSArray*)sortByNumValue:(NSMutableArray *)unsortedCollection {
@@ -45,7 +45,7 @@
 - (NSArray*)availableCells {
     NSMutableArray *unsortedAvailableCells = [NSMutableArray array];
 
-    for (id cellLocation in _gameboard)
+    for (id cellLocation in self.gameboard)
     {
         if (![self isCellOccupied:cellLocation])
             [unsortedAvailableCells addObject:cellLocation];
