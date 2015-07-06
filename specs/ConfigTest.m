@@ -45,7 +45,7 @@
 
     NSString *className = NSStringFromClass([[config getSettings][@"playerTwo"] class]);
 
-    XCTAssertEqualObjects(className, @"EasyAi", @"creates an easy AI player.");
+    XCTAssertEqualObjects(className, @"Ai", @"creates an easy AI player.");
 }
 
 - (void)testCreatesAHumanPlayer {

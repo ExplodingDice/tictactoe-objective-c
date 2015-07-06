@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "EasyAi.h"
+#import "Ai.h"
 
-@implementation EasyAi : NSObject
+@implementation Ai : NSObject
 
 -(id)initWithBoard:(Board *)board_
 {

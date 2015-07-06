@@ -3,7 +3,7 @@
 
 #import "Board.h"
 
-@interface EasyAi : NSObject
+@interface Ai : NSObject
 
 @property (nonatomic) Board *board;
 

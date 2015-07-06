@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "Config.h"
 #import "Board.h"
-#import "EasyAi.h"
+#import "Ai.h"
 #import "Human.h"
 
 @implementation Config : NSObject
@@ -26,11 +26,11 @@
     return board;
 }
 
-- (EasyAi *)getOpponent:(Board*)board{
+- (Ai *)getOpponent:(Board*)board{
     NSString *userInput = [self.validator promptForOpponent];
 
     if ([userInput isEqual: @"e"]) {
-        return [[EasyAi alloc] initWithBoard:board];
+        return [[Ai alloc] initWithBoard:board];
     }
 
     return NULL;
@@ -38,7 +38,7 @@
 
 -(NSDictionary *)getSettings {
     Board *board = [self getBoard];
-    EasyAi *opponent = [self getOpponent:board];
+    Ai *opponent = [self getOpponent:board];
     Human *human = [[Human alloc] initWithIO:self.io];
 
     return @{

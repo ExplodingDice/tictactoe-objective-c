@@ -1,6 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
-#import "EasyAi.h"
+#import "Ai.h"
 #import "Board.h"
 
 @interface EasyAiTest : XCTestCase
@@ -24,7 +24,7 @@
     [testBoard placePlayerPiece:@"X" atCellLocation:@3];
     [testBoard placePlayerPiece:@"O" atCellLocation:@7];
 
-    EasyAi *testAi = [[EasyAi alloc] initWithBoard:testBoard];
+    Ai *testAi = [[Ai alloc] initWithBoard:testBoard];
 
     NSNumber *aiMove = [testAi makeMove];
 
