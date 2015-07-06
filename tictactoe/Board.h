@@ -4,6 +4,7 @@
 @interface Board : NSObject
 
 @property NSMutableDictionary *gameboard;
+@property int dimensions;
 
 - (void)createBoard:(int)dimensions;
 - (void)placePlayerPiece:(NSString *)playerPiece atCellLocation:(NSNumber *)cellLocation;

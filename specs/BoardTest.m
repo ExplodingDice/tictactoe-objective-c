@@ -44,6 +44,12 @@
     XCTAssertEqualObjects(testBoard.gameboard, gameboard, "creates a gameboard with 16 cells.");
 }
 
+- (void)testReturnsTheBoardDimensions {
+    [testBoard createBoard:3];
+
+    XCTAssertEqual(testBoard.dimensions, 3, "returns gameboard dimensions.");
+}
+
 - (void)testPlacesAPieceOnTheBoard {
     [testBoard createBoard:3];
     [testBoard placePlayerPiece:@"X" atCellLocation:@1];

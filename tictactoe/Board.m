@@ -13,11 +13,13 @@
 
 - (NSIndexSet *)getAllCellNumbers:(int)dimensions {
     int size = [self calculateSizeBasedOn:dimensions];
-    
+
     return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, size)];
 }
 
 - (void)createBoard:(int)dimensions {
+    [self setDimensions:dimensions];
+
     NSIndexSet *cellNumbers = [self getAllCellNumbers:dimensions];
     self.gameboard = [[NSMutableDictionary alloc] init];
     
