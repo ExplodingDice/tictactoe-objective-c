@@ -125,4 +125,8 @@
     return (![self getWinningPiece] && [self fullBoard]);
 }
 
+- (BOOL)gameOver {
+    return ([self getWinningPiece] || [self isDraw]);
+}
+
 @end
