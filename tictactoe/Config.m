@@ -6,11 +6,12 @@
 
 @implementation Config : NSObject
 
-- (id)initWithIO:(IOttt *)io_
+- (id)initWithIO:(IOttt *)io_ andValidator:(Validator *)validator_
 {
     self = [super init];
     if (self) {
         self.io = io_;
+        self.validator = validator_;
     }
     return self;
 }
@@ -18,8 +19,7 @@
 - (Board *)getBoard {
     Board *board = [[Board alloc] init];
 
-    [self.io putOut:@"Choose a board size: "];
-    int userInput = [[self.io getIn] intValue];
+    int userInput = [self.validator promptForBoardSize];
 
     [board createBoard:userInput];
 
@@ -27,10 +27,9 @@
 }
 
 - (EasyAi *)getOpponent:(Board*)board{
-   [self.io putOut:@"Choose an opponent ('e' for Easy): "];
-    NSString *userInput = [self.io getIn];
+    NSString *userInput = [self.validator promptForOpponent];
 
-    if ([userInput  isEqual: @"e"]) {
+    if ([userInput isEqual: @"e"]) {
         return [[EasyAi alloc] initWithBoard:board];
     }
 
@@ -46,7 +45,8 @@
                 @"board"    : board,
                 @"playerOne": human,
                 @"playerTwo": opponent,
-                @"io"       : self.io
+                @"io"       : self.io,
+                @"validator": self.validator
             };
 }
 
