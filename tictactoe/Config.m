@@ -32,7 +32,7 @@
     NSString *userInput = [self.validator promptForOpponent:@[@"e", @"h"]];
 
     if ([userInput isEqual: @"e"]) {
-        return [[Ai alloc] initWithBoard:board];
+        return [[Ai alloc] initWithBoard:board andPlayerPiece:playerPiece];
     } else if ([userInput isEqual:@"h"]) {
         return [[HardAi alloc] initWithBoard:board Rulebook:rules andPlayerPiece:playerPiece];
     }
