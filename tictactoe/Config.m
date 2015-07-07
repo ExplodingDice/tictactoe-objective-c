@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "Config.h"
 #import "Board.h"
+#import "Rulebook.h"
+#import "HardAi.h"
 #import "Ai.h"
 #import "Human.h"
 
@@ -26,11 +28,13 @@
     return board;
 }
 
-- (Ai *)getOpponent:(Board*)board{
+- (Ai *)getOpponent:(Board *)board withRules:(Rulebook *)rules andPlayerPiece:(NSString *)playerPiece{
     NSString *userInput = [self.validator promptForOpponent];
 
     if ([userInput isEqual: @"e"]) {
         return [[Ai alloc] initWithBoard:board];
+    } else if ([userInput isEqual:@"h"]) {
+        return [[HardAi alloc] initWithBoard:board Rulebook:rules andPlayerPiece:playerPiece];
     }
 
     return NULL;
@@ -38,7 +42,8 @@
 
 -(NSDictionary *)getSettings {
     Board *board = [self getBoard];
-    Ai *opponent = [self getOpponent:board];
+    Rulebook *rules = [[Rulebook alloc] initWithBoard:board PlayerOne:@"O" andPlayerTwo:@"X"];
+    Ai *opponent = [self getOpponent:board withRules:rules andPlayerPiece:@"X"];
     Human *human = [[Human alloc] initWithIO:self.io];
 
     return @{
@@ -46,7 +51,8 @@
                 @"playerOne": human,
                 @"playerTwo": opponent,
                 @"io"       : self.io,
-                @"validator": self.validator
+                @"validator": self.validator,
+                @"rules"    : rules
             };
 }
 

@@ -25,9 +25,9 @@
 }
 
 - (NSString *)promptForOpponent {
-    NSArray *opponents = @[@"e"];
+    NSArray *opponents = @[@"e", @"h"];
 
-    [self.io putOut:@"Choose an opponent ('e' for Easy): "];
+    [self.io putOut:@"Choose an opponent ('e' for Easy or 'h' for Hard): "];
     NSString *userInput = [[self.io getIn] lowercaseString];
 
     if (![opponents containsObject:userInput]) {

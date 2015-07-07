@@ -48,6 +48,21 @@
     XCTAssertEqualObjects(className, @"Ai", @"creates an easy AI player.");
 }
 
+- (void)testCreatesAHardAIPlayer {
+    IOMock *ioMock = [[IOMock alloc] init];
+    ioMock.outputs = [NSMutableArray array];
+    NSMutableArray *testInputs = [NSMutableArray array];
+    [testInputs addObject:@"3"];
+    [testInputs addObject:@"h"];
+    ioMock.inputs = testInputs;
+    Validator *validator = [[Validator alloc] initWithIO:ioMock];
+    Config *config = [[Config alloc] initWithIO:ioMock andValidator:validator];
+
+    NSString *className = NSStringFromClass([[config getSettings][@"playerTwo"] class]);
+
+    XCTAssertEqualObjects(className, @"HardAi", @"creates a hard AI player.");
+}
+
 - (void)testCreatesAHumanPlayer {
     IOMock *ioMock = [[IOMock alloc] init];
     ioMock.outputs = [NSMutableArray array];
@@ -63,7 +78,22 @@
     XCTAssertEqualObjects(className, @"Human", @"creates a Human player.");
 }
 
-- (void)testCreatesIO {
+- (void)testCreatesRules {
+    IOMock *ioMock = [[IOMock alloc] init];
+    ioMock.outputs = [NSMutableArray array];
+    NSMutableArray *testInputs = [NSMutableArray array];
+    [testInputs addObject:@"3"];
+    [testInputs addObject:@"e"];
+    ioMock.inputs = testInputs;
+    Validator *validator = [[Validator alloc] initWithIO:ioMock];
+    Config *config = [[Config alloc] initWithIO:ioMock andValidator:validator];
+
+    NSString *className = NSStringFromClass([[config getSettings][@"rules"] class]);
+
+    XCTAssertEqualObjects(className, @"Rulebook", @"creates rules.");
+}
+
+- (void)testAssignsIOToSettings {
     IOMock *ioMock = [[IOMock alloc] init];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
