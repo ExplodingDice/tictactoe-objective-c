@@ -10,6 +10,7 @@
 - (id)initWithIO:(IOttt *)io;
 - (int)promptForBoardSize;
 - (NSString *)promptForOpponent:(NSArray *)choices;
+- (NSNumber *)promptForMove:(NSArray *)choices;
 
 @end
 

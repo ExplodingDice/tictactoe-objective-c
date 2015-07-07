@@ -62,4 +62,20 @@
     XCTAssertEqualObjects(opponent, @"h", @"returns a valid opponent selection.");
 }
 
+- (void)testPromptsForAMoveUntilAnAvailableCellIsSelected {
+    IOMock *ioMock = [[IOMock alloc] init];
+    NSMutableArray *testInputs = [NSMutableArray array];
+    [testInputs addObject:@"aaa"];
+    [testInputs addObject:@"$"];
+    [testInputs addObject:@"<"];
+    [testInputs addObject:@"5"];
+    [testInputs addObject:@"2"];
+    ioMock.inputs = testInputs;
+    
+    Validator *validator = [[Validator alloc] initWithIO:ioMock];
+    NSString *move = [validator promptForMove:@[@1, @2, @3]];
+    
+    XCTAssertEqualObjects(move, @2, @"returns a valid opponent selection.");
+}
+
 @end

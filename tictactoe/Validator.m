@@ -36,4 +36,18 @@
     return userInput;
 }
 
+- (NSNumber *)promptForMove:(NSArray *)choices {
+    [self.io putOut:@"Make a move: "];
+    int userInput = [[self.io getIn] intValue];
+    
+    NSNumber *moveNumber = [NSNumber numberWithInt:userInput];
+    
+    if (![choices containsObject:moveNumber]) {
+        [self.io putOut:@"Invalid move."];
+        moveNumber = [self promptForMove:choices];
+    }
+    
+    return moveNumber;
+}
+
 @end
