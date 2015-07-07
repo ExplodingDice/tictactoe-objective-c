@@ -43,8 +43,8 @@
 -(NSDictionary *)getSettings {
     Board *board = [self getBoard];
     Rulebook *rules = [[Rulebook alloc] initWithBoard:board PlayerOne:@"O" andPlayerTwo:@"X"];
-    Ai *opponent = [self getOpponent:board withRules:rules andPlayerPiece:@"X"];
-    Human *human = [[Human alloc] initWithIO:self.io];
+    Human *human = [[Human alloc] initWithIO:self.io andPlayerPiece:rules.playerOne];
+    Ai *opponent = [self getOpponent:board withRules:rules andPlayerPiece:rules.playerTwo];
 
     return @{
                 @"board"    : board,
