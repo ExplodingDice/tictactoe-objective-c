@@ -32,7 +32,7 @@
     XCTAssertEqual(boardSize, 3, @"returns a valid int for a board size.");
 }
 
-- (void)testPromptsForAnOpponent {
+- (void)testPromptsForAnOpponentUntilEasyIsSelected {
     IOMock *ioMock = [[IOMock alloc] init];
     NSMutableArray *testInputs = [NSMutableArray array];
     [testInputs addObject:@"aaa"];
@@ -42,9 +42,24 @@
     ioMock.inputs = testInputs;
 
     Validator *validator = [[Validator alloc] initWithIO:ioMock];
-    NSString *opponent = [validator promptForOpponent];
+    NSString *opponent = [validator promptForOpponent:@[@"e", @"h"]];
 
     XCTAssertEqualObjects(opponent, @"e", @"returns a valid opponent selection.");
+}
+
+- (void)testPromptsForAnOpponentUntilHardIsSelected {
+    IOMock *ioMock = [[IOMock alloc] init];
+    NSMutableArray *testInputs = [NSMutableArray array];
+    [testInputs addObject:@"aaa"];
+    [testInputs addObject:@"$"];
+    [testInputs addObject:@"<"];
+    [testInputs addObject:@"H"];
+    ioMock.inputs = testInputs;
+
+    Validator *validator = [[Validator alloc] initWithIO:ioMock];
+    NSString *opponent = [validator promptForOpponent:@[@"e", @"h"]];
+
+    XCTAssertEqualObjects(opponent, @"h", @"returns a valid opponent selection.");
 }
 
 @end

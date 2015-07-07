@@ -24,15 +24,13 @@
     return userInput;
 }
 
-- (NSString *)promptForOpponent {
-    NSArray *opponents = @[@"e"];
-
-    [self.io putOut:@"Choose an opponent ('e' for Easy): "];
+- (NSString *)promptForOpponent:(NSArray *)choices {
+    [self.io putOut:@"Choose an opponent ('e' for Easy or 'h' for Hard): "];
     NSString *userInput = [[self.io getIn] lowercaseString];
 
-    if (![opponents containsObject:userInput]) {
+    if (![choices containsObject:userInput]) {
         [self.io putOut:@"Invalid opponent selection."];
-        userInput = [self promptForOpponent];
+        userInput = [self promptForOpponent:choices];
     }
 
     return userInput;
