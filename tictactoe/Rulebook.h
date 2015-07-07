@@ -6,8 +6,11 @@
 @interface Rulebook : NSObject
 
 @property (nonatomic) Board *board;
+@property (nonatomic) NSString *playerOne;
+@property (nonatomic) NSString *playerTwo;
 
-- (id)initWithBoard:(Board *)board;
+- (id)initWithBoard:(Board *)board PlayerOne:(NSString *)playerOne andPlayerTwo:(NSString *)playerTwo;
+- (NSString *)currentPlayerPiece;
 - (NSString *)getWinningPiece;
 - (BOOL)isDraw;
 - (BOOL)gameOver;

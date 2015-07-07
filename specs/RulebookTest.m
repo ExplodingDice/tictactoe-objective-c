@@ -17,6 +17,34 @@
     [super tearDown];
 }
 
+- (void)testReturnsPlayerOneOnEvenCellCount {
+    Board *testBoard = [[Board alloc] init];
+    [testBoard createBoard:3];
+    testBoard.gameboard = @{
+                            @"1": @" ", @"2": @" ", @"3": @" ",
+                            @"4": @" ", @"5": @" ", @"6": @" ",
+                            @"7": @" ", @"8": @" ", @"9": @" "
+                            };
+
+    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
+
+    XCTAssertEqualObjects([rulebook currentPlayerPiece], @"O", @"returns the winning game piece if it exists.");
+}
+
+- (void)testReturnsPlayerTwoOnOddCellCount {
+    Board *testBoard = [[Board alloc] init];
+    [testBoard createBoard:3];
+    testBoard.gameboard = @{
+                            @"1": @"O", @"2": @" ", @"3": @" ",
+                            @"4": @" ", @"5": @" ", @"6": @" ",
+                            @"7": @" ", @"8": @" ", @"9": @" "
+                            };
+    
+    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
+    
+    XCTAssertEqualObjects([rulebook currentPlayerPiece], @"X", @"returns the winning game piece if it exists.");
+}
+
 - (void)testReturnsTheWinningGamePieceIfOneExists {
     Board *testBoard = [[Board alloc] init];
     [testBoard createBoard:3];
@@ -25,7 +53,7 @@
                             @"4": @" ", @"5": @"O", @"6": @"O",
                             @"7": @" ", @"8": @" ", @"9": @" "
                             };
-    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard];
+    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
     NSString *winner = [rulebook getWinningPiece];
 
@@ -40,7 +68,7 @@
                             @"4": @" ", @"5": @"O", @"6": @"O",
                             @"7": @" ", @"8": @" ", @"9": @" "
                             };
-    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard];
+    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
     NSString *winner = [rulebook getWinningPiece];
 
@@ -56,7 +84,7 @@
                             @"7": @"O", @"8": @"X", @"9": @"X"
                             };
 
-    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard];
+    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
     XCTAssertTrue([rulebook isDraw], @"returns true if the game is a draw.");
 }
@@ -70,7 +98,7 @@
                             @"7": @"X", @"8": @"X", @"9": @"O"
                             };
 
-    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard];
+    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
     XCTAssertFalse([rulebook isDraw], @"returns false if a winner is found.");
 }
@@ -84,7 +112,7 @@
                             @"7": @" ", @"8": @"X", @"9": @"O"
                             };
 
-    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard];
+    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
     XCTAssertFalse([rulebook isDraw], @"returns false if the board is not full.");
 }
@@ -98,7 +126,7 @@
                             @"7": @" ", @"8": @"X", @"9": @"O"
                             };
 
-    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard];
+    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
     XCTAssertTrue([rulebook gameOver], @"returns true if the game is over with a winner.");
 }
@@ -112,7 +140,7 @@
                             @"7": @"O", @"8": @"X", @"9": @"X"
                             };
 
-    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard];
+    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
     XCTAssertTrue([rulebook gameOver], @"returns true if the game is over with a draw.");
 }
@@ -126,7 +154,7 @@
                             @"7": @"O", @"8": @"X", @"9": @"X"
                             };
 
-    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard];
+    Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
     XCTAssertFalse([rulebook gameOver], @"returns false if the game is not over.");
 }

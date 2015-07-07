@@ -57,6 +57,14 @@
     XCTAssertEqualObjects(testBoard.gameboard[@1], @"X", "places a piece on the gameboard.");
 }
 
+- (void)testResetsCellOnTheBoard {
+    [testBoard createBoard:3];
+    [testBoard placePlayerPiece:@"X" atCellLocation:@1];
+    [testBoard resetCellAt:@1];
+    
+    XCTAssertEqualObjects(testBoard.gameboard[@1], @" ", "places a piece on the gameboard.");
+}
+
 - (void)testReturnsTrueIfTheCellIsOccupied {
     [testBoard createBoard:3];
     [testBoard placePlayerPiece:@"X" atCellLocation:@5];

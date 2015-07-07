@@ -30,7 +30,11 @@
 }
 
 - (void)placePlayerPiece:(NSString *)playerPiece atCellLocation:(NSNumber *)cellLocation {
-    [self.gameboard setObject:playerPiece forKey:cellLocation];
+    self.gameboard[cellLocation] = playerPiece;
+}
+
+- (void)resetCellAt:(NSNumber *)cellLocation {
+    self.gameboard[cellLocation] = @" ";
 }
 
 - (BOOL)isCellOccupied:(NSNumber *)cellLocation {
