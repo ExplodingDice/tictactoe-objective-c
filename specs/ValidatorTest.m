@@ -42,7 +42,7 @@
     ioMock.inputs = testInputs;
 
     Validator *validator = [[Validator alloc] initWithIO:ioMock];
-    NSString *opponent = [validator promptForOpponent];
+    NSString *opponent = [validator promptForOpponent:@[@"e", @"h"]];
 
     XCTAssertEqualObjects(opponent, @"e", @"returns a valid opponent selection.");
 }
@@ -57,7 +57,7 @@
     ioMock.inputs = testInputs;
 
     Validator *validator = [[Validator alloc] initWithIO:ioMock];
-    NSString *opponent = [validator promptForOpponent];
+    NSString *opponent = [validator promptForOpponent:@[@"e", @"h"]];
 
     XCTAssertEqualObjects(opponent, @"h", @"returns a valid opponent selection.");
 }

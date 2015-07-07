@@ -9,7 +9,7 @@
 
 - (id)initWithIO:(IOttt *)io;
 - (int)promptForBoardSize;
-- (NSString *)promptForOpponent;
+- (NSString *)promptForOpponent:(NSArray *)choices;
 
 @end
 

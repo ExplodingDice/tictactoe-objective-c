@@ -29,7 +29,7 @@
 }
 
 - (Ai *)getOpponent:(Board *)board withRules:(Rulebook *)rules andPlayerPiece:(NSString *)playerPiece{
-    NSString *userInput = [self.validator promptForOpponent];
+    NSString *userInput = [self.validator promptForOpponent:@[@"e", @"h"]];
 
     if ([userInput isEqual: @"e"]) {
         return [[Ai alloc] initWithBoard:board];
