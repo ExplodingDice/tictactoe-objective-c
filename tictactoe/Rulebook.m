@@ -3,13 +3,25 @@
 
 @implementation Rulebook : NSObject
 
--(id)initWithBoard:(Board *)board_
+-(id)initWithBoard:(Board *)board_ PlayerOne:(NSString *)playerOne_ andPlayerTwo:(NSString *)playerTwo_
 {
     self = [super init];
     if (self) {
         self.board = board_;
+        self.playerOne = playerOne_;
+        self.playerTwo = playerTwo_;
     }
     return self;
+}
+
+- (NSString *)currentPlayerPiece {
+    NSUInteger cellCount = [[self board].availableCells count];
+    
+    if (cellCount % 2 == 0) {
+        return [self playerOne];
+    } else {
+        return [self playerTwo];
+    }
 }
 
 - (NSMutableArray *)gameboardToArray {
