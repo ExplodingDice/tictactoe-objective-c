@@ -11,7 +11,7 @@
 }
 
 - (void)putOut:(NSString *)message {
-    NSLog(message);
+    NSLog(@"%@", message);
 }
 
 @end
