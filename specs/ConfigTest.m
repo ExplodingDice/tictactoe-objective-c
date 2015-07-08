@@ -24,7 +24,6 @@
     Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
-    [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
@@ -40,7 +39,6 @@
     Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
-    [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
@@ -56,7 +54,6 @@
     Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
-    [testInputs addObject:@"3"];
     [testInputs addObject:@"h"];
     ioMock.inputs = testInputs;
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
@@ -72,7 +69,6 @@
     Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
-    [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
@@ -88,7 +84,6 @@
     Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
-    [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
@@ -104,7 +99,6 @@
     Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
-    [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
@@ -120,7 +114,6 @@
     Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
-    [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];

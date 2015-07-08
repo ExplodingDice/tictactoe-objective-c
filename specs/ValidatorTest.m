@@ -18,22 +18,6 @@
     [super tearDown];
 }
 
-- (void)testPromptsForABoardSize {
-    IOMock *ioMock = [[IOMock alloc] init];
-    Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
-    NSMutableArray *testInputs = [NSMutableArray array];
-    [testInputs addObject:@"aaa"];
-    [testInputs addObject:@"$"];
-    [testInputs addObject:@"<"];
-    [testInputs addObject:@"3"];
-    ioMock.inputs = testInputs;
-
-    Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
-    int boardSize = [validator promptForBoardSize];
-
-    XCTAssertEqual(boardSize, 3, @"returns a valid int for a board size.");
-}
-
 - (void)testPromptsForAnOpponentUntilEasyIsSelected {
     IOMock *ioMock = [[IOMock alloc] init];
     Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];

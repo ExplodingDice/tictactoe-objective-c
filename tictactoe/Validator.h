@@ -10,7 +10,6 @@
 @property (nonatomic) Messenger *messenger;
 
 - (id)initWithIO:(IOttt *)io andMessenger:(Messenger *)messenger;
-- (int)promptForBoardSize;
 - (NSString *)promptForOpponent:(NSArray *)choices;
 - (NSNumber *)promptForMove:(NSArray *)choices;
 
