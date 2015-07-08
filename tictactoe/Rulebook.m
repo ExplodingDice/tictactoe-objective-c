@@ -15,20 +15,20 @@
 }
 
 - (NSString *)currentPlayerPiece {
-    NSUInteger cellCount = [[self board].availableCells count];
+    NSUInteger cellCount = [self.board.availableCells count];
     
     if (cellCount % 2 == 0) {
-        return [self playerOne];
+        return self.playerOne;
     } else {
-        return [self playerTwo];
+        return self.playerTwo;
     }
 }
 
 - (NSMutableArray *)gameboardToArray {
     NSMutableArray *boardValues = [NSMutableArray array];
 
-    for (NSNumber *key in [[[self board].gameboard allKeys] sortedArrayUsingSelector:@selector(compare:)]) {
-        [boardValues addObject:[self board].gameboard[key]];
+    for (NSNumber *key in [[self.board.gameboard allKeys] sortedArrayUsingSelector:@selector(compare:)]) {
+        [boardValues addObject: self.board.gameboard[key]];
     }
 
     return boardValues;
@@ -41,7 +41,7 @@
     int currentIndex = 0;
 
     while(currentIndex < [[self gameboardToArray] count]) {
-        NSRange range = NSMakeRange(currentIndex, MIN([self board].dimensions, itemsRemaining));
+        NSRange range = NSMakeRange(currentIndex, MIN(self.board.dimensions, itemsRemaining));
         NSArray *row = [[self gameboardToArray] subarrayWithRange:range];
         [rows addObject:row];
         itemsRemaining-=range.length;
@@ -63,7 +63,7 @@
 - (NSMutableArray *)columns {
     NSMutableArray *columns = [NSMutableArray array];
 
-    for (int xIndex = 0; xIndex < [self board].dimensions; xIndex++)
+    for (int xIndex = 0; xIndex < self.board.dimensions; xIndex++)
     {
         [columns addObject:[self column:xIndex]];
     }
@@ -74,7 +74,7 @@
 - (NSArray *)leftDiagonal {
     NSMutableArray *leftDiagonal = [NSMutableArray array];
     
-    for (int xIndex = 0; xIndex < [self board].dimensions; xIndex++) {
+    for (int xIndex = 0; xIndex < self.board.dimensions; xIndex++) {
         [leftDiagonal addObject:[self rows][xIndex][xIndex]];
     }
 
@@ -83,9 +83,9 @@
 
 - (NSArray *)rightDiagonal {
     NSMutableArray *rightDiagonal = [NSMutableArray array];
-    int yIndex = [self board].dimensions;
+    int yIndex = self.board.dimensions;
 
-    for (int xIndex = 0; xIndex < [self board].dimensions; xIndex++) {
+    for (int xIndex = 0; xIndex < self.board.dimensions; xIndex++) {
         yIndex--;
         [rightDiagonal addObject:[self rows][xIndex][yIndex]];
     }
