@@ -22,9 +22,7 @@
 - (Board *)getBoard {
     Board *board = [[Board alloc] init];
 
-    int userInput = [self.validator promptForBoardSize];
-
-    [board createBoard:userInput];
+    [board createBoard:3];
 
     return board;
 }

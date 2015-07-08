@@ -13,18 +13,6 @@
     return self;
 }
 
-- (int)promptForBoardSize {
-    [self.messenger chooseBoardSize];
-    int userInput = [[self.io getIn] intValue];
-
-    if (userInput == 0) {
-        [self.messenger invalidInput];
-        userInput = [self promptForBoardSize];
-    }
-
-    return userInput;
-}
-
 - (NSString *)promptForOpponent:(NSArray *)choices {
     [self.messenger chooseAnOpponent];
     NSString *userInput = [[self.io getIn] lowercaseString];
