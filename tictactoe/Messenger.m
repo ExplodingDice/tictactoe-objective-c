@@ -70,6 +70,8 @@
         if (i != 2)
             [self.io putOut:@"---------"];
     }
+    
+    [self.io putOut:@"\n\n"];
 }
 
 @end

@@ -47,6 +47,10 @@
     [self.messenger welcome];
     
     while (![self.rules gameOver]) {
+        [self.messenger gameboard:[self.rules rows]];
+        
+//        NSLog(@"Board: %@", self.board.gameboard);
+        // [self.messenger gameboard];
         [self.board placePlayerPiece:[self currentPiece] atCellLocation:[self getMove]];
     }
     

@@ -10,6 +10,7 @@
 @property (nonatomic) NSString *playerTwo;
 
 - (id)initWithBoard:(Board *)board PlayerOne:(NSString *)playerOne andPlayerTwo:(NSString *)playerTwo;
+- (NSMutableArray *)rows;
 - (NSString *)currentPlayerPiece;
 - (NSString *)getWinningPiece;
 - (BOOL)isDraw;

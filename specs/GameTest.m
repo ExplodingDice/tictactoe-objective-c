@@ -54,9 +54,7 @@
     Game *game = [[Game alloc] initWithSettings:settings];
     [game run];
     
-    NSArray *expectedOutput =  @[@"Welcome to Tic Tac Toe!", @"X wins!"];
-
-    XCTAssertEqualObjects(ioMock.outputs, expectedOutput);
+    XCTAssertTrue([ioMock.outputs containsObject:@"X wins!"]);
 }
 
 - (void)testGameEndsInDraw {
@@ -95,9 +93,7 @@
     Game *game = [[Game alloc] initWithSettings:settings];
     [game run];
     
-    NSArray *expectedOutput =  @[@"Welcome to Tic Tac Toe!", @"Make a move: ", @"DRAW GAME!"];
-    
-    XCTAssertEqualObjects(ioMock.outputs, expectedOutput);
+    XCTAssertTrue([ioMock.outputs containsObject:@"DRAW GAME!"]);
 }
 
 @end

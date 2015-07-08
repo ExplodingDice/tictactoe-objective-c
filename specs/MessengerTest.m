@@ -115,7 +115,7 @@
                                 @"---------",
                                 @"  | 2 |  ",
                                 @"---------",
-                                @"  |   | 3"];
+                                @"  |   | 3", @"\n\n"];
     
     XCTAssertEqualObjects(ioMock.outputs, expectedOutput);
 }
