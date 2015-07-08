@@ -51,6 +51,7 @@
         [self.board placePlayerPiece:[self currentPiece] atCellLocation:[self getMove]];
     }
     
+    [self.messenger gameboard:[self.rules rows]];
     [self determineResults];
 }
 
