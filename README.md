@@ -1,4 +1,6 @@
 # Tic Tac Toe
+[![Build Status](https://travis-ci.org/ExplodingDice/tictactoe-objective-c.svg?branch=refactoring)](https://travis-ci.org/ExplodingDice/tictactoe-objective-c)
+
 Basic CL game of Tic Tac Toe written in Objective-C.
 ## Configuration
 Install the latest version of [Xcode](https://developer.apple.com/xcode/).
