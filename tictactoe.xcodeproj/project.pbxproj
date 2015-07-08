@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06AE50EB1B3F712D009D2E42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE50EA1B3F712D009D2E42 /* main.m */; };
+		06AE50F71B3F9A79009D2E42 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE50F61B3F9A79009D2E42 /* Board.m */; };
+		06AE51081B40904F009D2E42 /* BoardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE51071B40904F009D2E42 /* BoardTest.m */; };
+		06AE510C1B443160009D2E42 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE50F61B3F9A79009D2E42 /* Board.m */; };
+		06AE510F1B45994E009D2E42 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE510E1B45994E009D2E42 /* Human.m */; };
+		06AE51101B45994E009D2E42 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE510E1B45994E009D2E42 /* Human.m */; };
+		06AE51121B459C8F009D2E42 /* HumanTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE51111B459C8F009D2E42 /* HumanTest.m */; };
+		06AE51151B45BDB8009D2E42 /* IOMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE51141B45BDB8009D2E42 /* IOMock.m */; };
+		06AE51171B45C482009D2E42 /* IOttt.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE51161B45C482009D2E42 /* IOttt.m */; };
+		06AE51181B45C482009D2E42 /* IOttt.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE51161B45C482009D2E42 /* IOttt.m */; };
+		06F4ECBD1B4A0D6D00148ACC /* Ai.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECBC1B4A0D6D00148ACC /* Ai.m */; };
+		06F4ECBE1B4A0D6D00148ACC /* Ai.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECBC1B4A0D6D00148ACC /* Ai.m */; };
+		06F4ECC11B4A0DA500148ACC /* EasyAiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECC01B4A0DA500148ACC /* EasyAiTest.m */; };
+		06F4ECC31B4A33DC00148ACC /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECC21B4A33DC00148ACC /* Config.m */; };
+		06F4ECC41B4A33DC00148ACC /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECC21B4A33DC00148ACC /* Config.m */; };
+		06F4ECC71B4A341000148ACC /* ConfigTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECC61B4A341000148ACC /* ConfigTest.m */; };
+		06F4ECC91B4A615D00148ACC /* Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECC81B4A615D00148ACC /* Validator.m */; };
+		06F4ECCA1B4A615D00148ACC /* Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECC81B4A615D00148ACC /* Validator.m */; };
+		06F4ECCD1B4A63C300148ACC /* ValidatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECCC1B4A63C300148ACC /* ValidatorTest.m */; };
+		06F4ECCF1B4AC43C00148ACC /* Rulebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECCE1B4AC43C00148ACC /* Rulebook.m */; };
+		06F4ECD01B4AC43C00148ACC /* Rulebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECCE1B4AC43C00148ACC /* Rulebook.m */; };
+		06F4ECD31B4AC48F00148ACC /* RulebookTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECD21B4AC48F00148ACC /* RulebookTest.m */; };
+		06F4ECD51B4B317F00148ACC /* HardAi.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECD41B4B317F00148ACC /* HardAi.m */; };
+		06F4ECD61B4B317F00148ACC /* HardAi.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECD41B4B317F00148ACC /* HardAi.m */; };
+		06F4ECD91B4B31C900148ACC /* HardAiTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECD81B4B31C900148ACC /* HardAiTest.m */; };
+		06F4ECDB1B4C46FF00148ACC /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECDA1B4C46FF00148ACC /* Game.m */; };
+		06F4ECDC1B4C46FF00148ACC /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECDA1B4C46FF00148ACC /* Game.m */; };
+		06F4ECDF1B4C472A00148ACC /* GameTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECDE1B4C472A00148ACC /* GameTest.m */; };
+		06F4ECE11B4C77A300148ACC /* Messenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECE01B4C77A300148ACC /* Messenger.m */; };
+		06F4ECE21B4C77A300148ACC /* Messenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECE01B4C77A300148ACC /* Messenger.m */; };
+		06F4ECE51B4C77CE00148ACC /* MessengerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F4ECE41B4C77CE00148ACC /* MessengerTest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		06AE50E51B3F712D009D2E42 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		06AE50E71B3F712D009D2E42 /* tictactoe */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tictactoe; sourceTree = BUILT_PRODUCTS_DIR; };
+		06AE50EA1B3F712D009D2E42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		06AE50F61B3F9A79009D2E42 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		06AE50FC1B407832009D2E42 /* specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06AE50FF1B407832009D2E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06AE51071B40904F009D2E42 /* BoardTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardTest.m; sourceTree = "<group>"; };
+		06AE51091B43742E009D2E42 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		06AE510D1B4598EC009D2E42 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
+		06AE510E1B45994E009D2E42 /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
+		06AE51111B459C8F009D2E42 /* HumanTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanTest.m; sourceTree = "<group>"; };
+		06AE51141B45BDB8009D2E42 /* IOMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOMock.m; sourceTree = "<group>"; };
+		06AE51161B45C482009D2E42 /* IOttt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOttt.m; sourceTree = "<group>"; };
+		06AE51191B45C4AA009D2E42 /* IOttt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOttt.h; sourceTree = "<group>"; };
+		06AE511A1B48B5EB009D2E42 /* IOMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOMock.h; sourceTree = "<group>"; };
+		06F4ECBC1B4A0D6D00148ACC /* Ai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ai.m; sourceTree = "<group>"; };
+		06F4ECBF1B4A0D7D00148ACC /* Ai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ai.h; sourceTree = "<group>"; };
+		06F4ECC01B4A0DA500148ACC /* EasyAiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyAiTest.m; sourceTree = "<group>"; };
+		06F4ECC21B4A33DC00148ACC /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		06F4ECC51B4A33F300148ACC /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		06F4ECC61B4A341000148ACC /* ConfigTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigTest.m; sourceTree = "<group>"; };
+		06F4ECC81B4A615D00148ACC /* Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Validator.m; sourceTree = "<group>"; };
+		06F4ECCB1B4A616D00148ACC /* Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
+		06F4ECCC1B4A63C300148ACC /* ValidatorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorTest.m; sourceTree = "<group>"; };
+		06F4ECCE1B4AC43C00148ACC /* Rulebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rulebook.m; sourceTree = "<group>"; };
+		06F4ECD11B4AC44D00148ACC /* Rulebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rulebook.h; sourceTree = "<group>"; };
+		06F4ECD21B4AC48F00148ACC /* RulebookTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulebookTest.m; sourceTree = "<group>"; };
+		06F4ECD41B4B317F00148ACC /* HardAi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HardAi.m; sourceTree = "<group>"; };
+		06F4ECD71B4B319200148ACC /* HardAi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HardAi.h; sourceTree = "<group>"; };
+		06F4ECD81B4B31C900148ACC /* HardAiTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HardAiTest.m; sourceTree = "<group>"; };
+		06F4ECDA1B4C46FF00148ACC /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		06F4ECDD1B4C470D00148ACC /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		06F4ECDE1B4C472A00148ACC /* GameTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTest.m; sourceTree = "<group>"; };
+		06F4ECE01B4C77A300148ACC /* Messenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Messenger.m; sourceTree = "<group>"; };
+		06F4ECE31B4C77B100148ACC /* Messenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messenger.h; sourceTree = "<group>"; };
+		06F4ECE41B4C77CE00148ACC /* MessengerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessengerTest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06AE50E41B3F712D009D2E42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06AE50F91B407832009D2E42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06AE50DE1B3F712D009D2E42 = {
+			isa = PBXGroup;
+			children = (
+				06AE50E91B3F712D009D2E42 /* tictactoe */,
+				06AE50FD1B407832009D2E42 /* specs */,
+				06AE50E81B3F712D009D2E42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		06AE50E81B3F712D009D2E42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06AE50E71B3F712D009D2E42 /* tictactoe */,
+				06AE50FC1B407832009D2E42 /* specs.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06AE50E91B3F712D009D2E42 /* tictactoe */ = {
+			isa = PBXGroup;
+			children = (
+				06AE50EA1B3F712D009D2E42 /* main.m */,
+				06AE51091B43742E009D2E42 /* Board.h */,
+				06AE50F61B3F9A79009D2E42 /* Board.m */,
+				06AE510D1B4598EC009D2E42 /* Human.h */,
+				06AE510E1B45994E009D2E42 /* Human.m */,
+				06AE51161B45C482009D2E42 /* IOttt.m */,
+				06AE51191B45C4AA009D2E42 /* IOttt.h */,
+				06F4ECBC1B4A0D6D00148ACC /* Ai.m */,
+				06F4ECBF1B4A0D7D00148ACC /* Ai.h */,
+				06F4ECC21B4A33DC00148ACC /* Config.m */,
+				06F4ECC51B4A33F300148ACC /* Config.h */,
+				06F4ECC81B4A615D00148ACC /* Validator.m */,
+				06F4ECCB1B4A616D00148ACC /* Validator.h */,
+				06F4ECCE1B4AC43C00148ACC /* Rulebook.m */,
+				06F4ECD11B4AC44D00148ACC /* Rulebook.h */,
+				06F4ECD41B4B317F00148ACC /* HardAi.m */,
+				06F4ECD71B4B319200148ACC /* HardAi.h */,
+				06F4ECDA1B4C46FF00148ACC /* Game.m */,
+				06F4ECDD1B4C470D00148ACC /* Game.h */,
+				06F4ECE01B4C77A300148ACC /* Messenger.m */,
+				06F4ECE31B4C77B100148ACC /* Messenger.h */,
+			);
+			path = tictactoe;
+			sourceTree = "<group>";
+		};
+		06AE50FD1B407832009D2E42 /* specs */ = {
+			isa = PBXGroup;
+			children = (
+				06AE51131B45BD71009D2E42 /* mocks */,
+				06AE51071B40904F009D2E42 /* BoardTest.m */,
+				06AE50FE1B407832009D2E42 /* Supporting Files */,
+				06AE51111B459C8F009D2E42 /* HumanTest.m */,
+				06F4ECC01B4A0DA500148ACC /* EasyAiTest.m */,
+				06F4ECC61B4A341000148ACC /* ConfigTest.m */,
+				06F4ECCC1B4A63C300148ACC /* ValidatorTest.m */,
+				06F4ECD21B4AC48F00148ACC /* RulebookTest.m */,
+				06F4ECD81B4B31C900148ACC /* HardAiTest.m */,
+				06F4ECDE1B4C472A00148ACC /* GameTest.m */,
+				06F4ECE41B4C77CE00148ACC /* MessengerTest.m */,
+			);
+			path = specs;
+			sourceTree = "<group>";
+		};
+		06AE50FE1B407832009D2E42 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06AE50FF1B407832009D2E42 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06AE51131B45BD71009D2E42 /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				06AE51141B45BDB8009D2E42 /* IOMock.m */,
+				06AE511A1B48B5EB009D2E42 /* IOMock.h */,
+			);
+			name = mocks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06AE50E61B3F712D009D2E42 /* tictactoe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06AE50EE1B3F712D009D2E42 /* Build configuration list for PBXNativeTarget "tictactoe" */;
+			buildPhases = (
+				06AE50E31B3F712D009D2E42 /* Sources */,
+				06AE50E41B3F712D009D2E42 /* Frameworks */,
+				06AE50E51B3F712D009D2E42 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tictactoe;
+			productName = tictactoe;
+			productReference = 06AE50E71B3F712D009D2E42 /* tictactoe */;
+			productType = "com.apple.product-type.tool";
+		};
+		06AE50FB1B407832009D2E42 /* specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06AE51021B407832009D2E42 /* Build configuration list for PBXNativeTarget "specs" */;
+			buildPhases = (
+				06AE50F81B407832009D2E42 /* Sources */,
+				06AE50F91B407832009D2E42 /* Frameworks */,
+				06AE50FA1B407832009D2E42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = specs;
+			productName = specs;
+			productReference = 06AE50FC1B407832009D2E42 /* specs.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06AE50DF1B3F712D009D2E42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Exploding Dice";
+				TargetAttributes = {
+					06AE50E61B3F712D009D2E42 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					06AE50FB1B407832009D2E42 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = 06AE50E21B3F712D009D2E42 /* Build configuration list for PBXProject "tictactoe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 06AE50DE1B3F712D009D2E42;
+			productRefGroup = 06AE50E81B3F712D009D2E42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06AE50E61B3F712D009D2E42 /* tictactoe */,
+				06AE50FB1B407832009D2E42 /* specs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06AE50FA1B407832009D2E42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06AE50E31B3F712D009D2E42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F4ECCF1B4AC43C00148ACC /* Rulebook.m in Sources */,
+				06AE510F1B45994E009D2E42 /* Human.m in Sources */,
+				06F4ECE11B4C77A300148ACC /* Messenger.m in Sources */,
+				06F4ECC91B4A615D00148ACC /* Validator.m in Sources */,
+				06F4ECC31B4A33DC00148ACC /* Config.m in Sources */,
+				06F4ECBD1B4A0D6D00148ACC /* Ai.m in Sources */,
+				06F4ECDB1B4C46FF00148ACC /* Game.m in Sources */,
+				06AE50F71B3F9A79009D2E42 /* Board.m in Sources */,
+				06AE51171B45C482009D2E42 /* IOttt.m in Sources */,
+				06F4ECD51B4B317F00148ACC /* HardAi.m in Sources */,
+				06AE50EB1B3F712D009D2E42 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06AE50F81B407832009D2E42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F4ECDC1B4C46FF00148ACC /* Game.m in Sources */,
+				06F4ECD91B4B31C900148ACC /* HardAiTest.m in Sources */,
+				06F4ECD31B4AC48F00148ACC /* RulebookTest.m in Sources */,
+				06F4ECD61B4B317F00148ACC /* HardAi.m in Sources */,
+				06AE51181B45C482009D2E42 /* IOttt.m in Sources */,
+				06AE51101B45994E009D2E42 /* Human.m in Sources */,
+				06F4ECBE1B4A0D6D00148ACC /* Ai.m in Sources */,
+				06F4ECDF1B4C472A00148ACC /* GameTest.m in Sources */,
+				06F4ECC71B4A341000148ACC /* ConfigTest.m in Sources */,
+				06F4ECCD1B4A63C300148ACC /* ValidatorTest.m in Sources */,
+				06F4ECE21B4C77A300148ACC /* Messenger.m in Sources */,
+				06F4ECE51B4C77CE00148ACC /* MessengerTest.m in Sources */,
+				06F4ECC11B4A0DA500148ACC /* EasyAiTest.m in Sources */,
+				06AE51151B45BDB8009D2E42 /* IOMock.m in Sources */,
+				06AE510C1B443160009D2E42 /* Board.m in Sources */,
+				06AE51081B40904F009D2E42 /* BoardTest.m in Sources */,
+				06F4ECC41B4A33DC00148ACC /* Config.m in Sources */,
+				06F4ECCA1B4A615D00148ACC /* Validator.m in Sources */,
+				06F4ECD01B4AC43C00148ACC /* Rulebook.m in Sources */,
+				06AE51121B459C8F009D2E42 /* HumanTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		06AE50EC1B3F712D009D2E42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		06AE50ED1B3F712D009D2E42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		06AE50EF1B3F712D009D2E42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		06AE50F01B3F712D009D2E42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		06AE51031B407832009D2E42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = specs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		06AE51041B407832009D2E42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = specs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06AE50E21B3F712D009D2E42 /* Build configuration list for PBXProject "tictactoe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06AE50EC1B3F712D009D2E42 /* Debug */,
+				06AE50ED1B3F712D009D2E42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06AE50EE1B3F712D009D2E42 /* Build configuration list for PBXNativeTarget "tictactoe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06AE50EF1B3F712D009D2E42 /* Debug */,
+				06AE50F01B3F712D009D2E42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06AE51021B407832009D2E42 /* Build configuration list for PBXNativeTarget "specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06AE51031B407832009D2E42 /* Debug */,
+				06AE51041B407832009D2E42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06AE50DF1B3F712D009D2E42 /* Project object */;
+}
