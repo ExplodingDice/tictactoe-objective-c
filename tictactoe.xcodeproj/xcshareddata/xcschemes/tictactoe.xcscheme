@@ -20,6 +20,20 @@
                ReferencedContainer = "container:tictactoe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "06AE50FB1B407832009D2E42"
+               BuildableName = "specs.xctest"
+               BlueprintName = "specs"
+               ReferencedContainer = "container:tictactoe.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
