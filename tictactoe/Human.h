@@ -6,8 +6,9 @@
 @interface Human : NSObject
 
 @property (nonatomic) IOttt *io;
+@property (nonatomic) NSString *playerPiece;
 
--(id)initWithIO:(IOttt *)io;
+-(id)initWithIO:(IOttt *)io andPlayerPiece:(NSString *)playerPiece;
 -(NSString *)makeMove;
 @end
 

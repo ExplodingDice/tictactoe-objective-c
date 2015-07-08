@@ -3,21 +3,22 @@
 
 @implementation Validator : NSObject
 
--(id)initWithIO:(IOttt *)io_
+-(id)initWithIO:(IOttt *)io_ andMessenger:(Messenger *)messenger_
 {
     self = [super init];
     if (self) {
         self.io = io_;
+        self.messenger = messenger_;
     }
     return self;
 }
 
 - (int)promptForBoardSize {
-    [self.io putOut:@"Choose a board size: (eg. '3' for 3x3)"];
+    [self.messenger chooseBoardSize];
     int userInput = [[self.io getIn] intValue];
 
     if (userInput == 0) {
-        [self.io putOut:@"Invalid input."];
+        [self.messenger invalidInput];
         userInput = [self promptForBoardSize];
     }
 
@@ -25,15 +26,29 @@
 }
 
 - (NSString *)promptForOpponent:(NSArray *)choices {
-    [self.io putOut:@"Choose an opponent ('e' for Easy or 'h' for Hard): "];
+    [self.messenger chooseAnOpponent];
     NSString *userInput = [[self.io getIn] lowercaseString];
 
     if (![choices containsObject:userInput]) {
-        [self.io putOut:@"Invalid opponent selection."];
+        [self.messenger invalidOpponent];
         userInput = [self promptForOpponent:choices];
     }
 
     return userInput;
+}
+
+- (NSNumber *)promptForMove:(NSArray *)choices {
+    [self.messenger makeMove];
+    int userInput = [[self.io getIn] intValue];
+    
+    NSNumber *moveNumber = [NSNumber numberWithInt:userInput];
+    
+    if (![choices containsObject:moveNumber]) {
+        [self.messenger invalidMove];
+        moveNumber = [self promptForMove:choices];
+    }
+    
+    return moveNumber;
 }
 
 @end

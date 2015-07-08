@@ -7,7 +7,6 @@
 @interface HardAi : Ai
 
 @property (nonatomic) Rulebook *rulebook;
-@property (nonatomic) NSString *playerPiece;
 
 -(id)initWithBoard:(Board *)board Rulebook:(Rulebook *)rulebook andPlayerPiece:(NSString *)playerPiece;
 - (NSNumber *)makeMove;

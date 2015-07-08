@@ -8,11 +8,12 @@
 
 @implementation Config : NSObject
 
-- (id)initWithIO:(IOttt *)io_ andValidator:(Validator *)validator_
+- (id)initWithIO:(IOttt *)io_ andMessenger:(Messenger *)messenger_ andValidator:(Validator *)validator_
 {
     self = [super init];
     if (self) {
         self.io = io_;
+        self.messenger = messenger_;
         self.validator = validator_;
     }
     return self;
@@ -32,7 +33,7 @@
     NSString *userInput = [self.validator promptForOpponent:@[@"e", @"h"]];
 
     if ([userInput isEqual: @"e"]) {
-        return [[Ai alloc] initWithBoard:board];
+        return [[Ai alloc] initWithBoard:board andPlayerPiece:playerPiece];
     } else if ([userInput isEqual:@"h"]) {
         return [[HardAi alloc] initWithBoard:board Rulebook:rules andPlayerPiece:playerPiece];
     }
@@ -43,14 +44,14 @@
 -(NSDictionary *)getSettings {
     Board *board = [self getBoard];
     Rulebook *rules = [[Rulebook alloc] initWithBoard:board PlayerOne:@"O" andPlayerTwo:@"X"];
-    Ai *opponent = [self getOpponent:board withRules:rules andPlayerPiece:@"X"];
-    Human *human = [[Human alloc] initWithIO:self.io];
+    Human *human = [[Human alloc] initWithIO:self.io andPlayerPiece:rules.playerOne];
+    Ai *opponent = [self getOpponent:board withRules:rules andPlayerPiece:rules.playerTwo];
 
     return @{
                 @"board"    : board,
                 @"playerOne": human,
                 @"playerTwo": opponent,
-                @"io"       : self.io,
+                @"messenger": self.messenger,
                 @"validator": self.validator,
                 @"rules"    : rules
             };

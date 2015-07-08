@@ -24,11 +24,25 @@
     [testBoard placePlayerPiece:@"X" atCellLocation:@3];
     [testBoard placePlayerPiece:@"O" atCellLocation:@7];
 
-    Ai *testAi = [[Ai alloc] initWithBoard:testBoard];
+    Ai *testAi = [[Ai alloc] initWithBoard:testBoard andPlayerPiece:@"X"];
 
     NSNumber *aiMove = [testAi makeMove];
 
     XCTAssertTrue([testBoard.availableCells containsObject:aiMove], @"returns a move based on available cells.");
+}
+
+- (void)testReturnsThePlayerPiece {
+    Board *testBoard = [[Board alloc] init];
+    [testBoard createBoard:3];
+    
+    [testBoard placePlayerPiece:@"X" atCellLocation:@3];
+    [testBoard placePlayerPiece:@"O" atCellLocation:@7];
+    
+    Ai *testAi = [[Ai alloc] initWithBoard:testBoard andPlayerPiece:@"X"];
+    
+    NSNumber *aiMove = [testAi makeMove];
+    
+    XCTAssertEqualObjects(testAi.playerPiece, @"X", @"returns a move based on available cells.");
 }
 
 @end

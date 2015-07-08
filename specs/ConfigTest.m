@@ -3,6 +3,7 @@
 #import "Config.h"
 #import "IOMock.h"
 #import "Validator.h"
+#import "Messenger.h"
 
 @interface ConfigTest : XCTestCase
 
@@ -20,13 +21,14 @@
 
 - (void)testCreatesABoard {
     IOMock *ioMock = [[IOMock alloc] init];
+    Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
     [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
-    Validator *validator = [[Validator alloc] initWithIO:ioMock];
-    Config *config = [[Config alloc] initWithIO:ioMock andValidator:validator];
+    Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
+    Config *config = [[Config alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger andValidator:validator];
 
     NSString *className = NSStringFromClass([[config getSettings][@"board"] class]);
 
@@ -35,13 +37,14 @@
 
 - (void)testCreatesAnEasyAIPlayer {
     IOMock *ioMock = [[IOMock alloc] init];
+    Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
     [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
-    Validator *validator = [[Validator alloc] initWithIO:ioMock];
-    Config *config = [[Config alloc] initWithIO:ioMock andValidator:validator];
+    Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
+    Config *config = [[Config alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger andValidator:validator];
 
     NSString *className = NSStringFromClass([[config getSettings][@"playerTwo"] class]);
 
@@ -50,13 +53,14 @@
 
 - (void)testCreatesAHardAIPlayer {
     IOMock *ioMock = [[IOMock alloc] init];
+    Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
     [testInputs addObject:@"3"];
     [testInputs addObject:@"h"];
     ioMock.inputs = testInputs;
-    Validator *validator = [[Validator alloc] initWithIO:ioMock];
-    Config *config = [[Config alloc] initWithIO:ioMock andValidator:validator];
+    Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
+    Config *config = [[Config alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger andValidator:validator];
 
     NSString *className = NSStringFromClass([[config getSettings][@"playerTwo"] class]);
 
@@ -65,13 +69,14 @@
 
 - (void)testCreatesAHumanPlayer {
     IOMock *ioMock = [[IOMock alloc] init];
+    Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
     [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
-    Validator *validator = [[Validator alloc] initWithIO:ioMock];
-    Config *config = [[Config alloc] initWithIO:ioMock andValidator:validator];
+    Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
+    Config *config = [[Config alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger andValidator:validator];
 
     NSString *className = NSStringFromClass([[config getSettings][@"playerOne"] class]);
 
@@ -80,43 +85,46 @@
 
 - (void)testCreatesRules {
     IOMock *ioMock = [[IOMock alloc] init];
+    Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
     [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
-    Validator *validator = [[Validator alloc] initWithIO:ioMock];
-    Config *config = [[Config alloc] initWithIO:ioMock andValidator:validator];
+    Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
+    Config *config = [[Config alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger andValidator:validator];
 
     NSString *className = NSStringFromClass([[config getSettings][@"rules"] class]);
 
     XCTAssertEqualObjects(className, @"Rulebook", @"creates rules.");
 }
 
-- (void)testAssignsIOToSettings {
+- (void)testAssignsMessengerToSettings {
     IOMock *ioMock = [[IOMock alloc] init];
+    Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
     [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
-    Validator *validator = [[Validator alloc] initWithIO:ioMock];
-    Config *config = [[Config alloc] initWithIO:ioMock andValidator:validator];
+    Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
+    Config *config = [[Config alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger andValidator:validator];
 
-    NSString *className = NSStringFromClass([[config getSettings][@"io"] class]);
+    NSString *className = NSStringFromClass([[config getSettings][@"messenger"] class]);
 
-    XCTAssertEqualObjects(className, @"IOMock", @"creates IO.");
+    XCTAssertEqualObjects(className, @"Messenger", @"creates messenger.");
 }
 
 - (void)testAssignsValidatorToSettings {
     IOMock *ioMock = [[IOMock alloc] init];
+    Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     ioMock.outputs = [NSMutableArray array];
     NSMutableArray *testInputs = [NSMutableArray array];
     [testInputs addObject:@"3"];
     [testInputs addObject:@"e"];
     ioMock.inputs = testInputs;
-    Validator *validator = [[Validator alloc] initWithIO:ioMock];
-    Config *config = [[Config alloc] initWithIO:ioMock andValidator:validator];
+    Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
+    Config *config = [[Config alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger andValidator:validator];
 
     NSString *className = NSStringFromClass([[config getSettings][@"validator"] class]);
 

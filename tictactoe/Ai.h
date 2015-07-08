@@ -6,8 +6,9 @@
 @interface Ai : NSObject
 
 @property (nonatomic) Board *board;
+@property (nonatomic) NSString *playerPiece;
 
--(id)initWithBoard:(Board *)board;
+-(id)initWithBoard:(Board *)board andPlayerPiece:(NSString *)playerPiece;
 - (NSNumber *)makeMove;
 
 @end
