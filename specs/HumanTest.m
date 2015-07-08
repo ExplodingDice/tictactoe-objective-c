@@ -24,7 +24,7 @@
     ioMock.inputs = testInputs;
     Human *testHuman = [[Human alloc] initWithIO:ioMock andPlayerPiece:@"O"];
 
-    XCTAssertEqualObjects([testHuman makeMove], @"2", @"gets a move from the user.");
+    XCTAssertEqualObjects([testHuman makeMove], @"2");
 }
 
 - (void)testReturnsTheHumanPlayerPiece {
@@ -35,7 +35,7 @@
     ioMock.inputs = testInputs;
     Human *testHuman = [[Human alloc] initWithIO:ioMock andPlayerPiece:@"O"];
 
-    XCTAssertEqualObjects(testHuman.playerPiece, @"O", @"gets a move from the user.");
+    XCTAssertEqualObjects(testHuman.playerPiece, @"O");
 }
 
 @end

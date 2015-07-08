@@ -28,7 +28,7 @@
 
     NSNumber *aiMove = [testAi makeMove];
 
-    XCTAssertTrue([testBoard.availableCells containsObject:aiMove], @"returns a move based on available cells.");
+    XCTAssertTrue([testBoard.availableCells containsObject:aiMove]);
 }
 
 - (void)testReturnsThePlayerPiece {
@@ -40,9 +40,7 @@
     
     Ai *testAi = [[Ai alloc] initWithBoard:testBoard andPlayerPiece:@"X"];
     
-    NSNumber *aiMove = [testAi makeMove];
-    
-    XCTAssertEqualObjects(testAi.playerPiece, @"X", @"returns a move based on available cells.");
+    XCTAssertEqualObjects(testAi.playerPiece, @"X");
 }
 
 @end

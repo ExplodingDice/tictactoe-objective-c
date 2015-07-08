@@ -28,7 +28,7 @@
 
     Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
-    XCTAssertEqualObjects([rulebook currentPlayerPiece], @"O", @"returns the winning game piece if it exists.");
+    XCTAssertEqualObjects([rulebook currentPlayerPiece], @"O");
 }
 
 - (void)testReturnsPlayerTwoOnOddCellCount {
@@ -42,7 +42,7 @@
     
     Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
     
-    XCTAssertEqualObjects([rulebook currentPlayerPiece], @"X", @"returns the winning game piece if it exists.");
+    XCTAssertEqualObjects([rulebook currentPlayerPiece], @"X");
 }
 
 - (void)testReturnsTheWinningGamePieceIfOneExists {
@@ -57,7 +57,7 @@
 
     NSString *winner = [rulebook getWinningPiece];
 
-    XCTAssertEqualObjects(winner, @"X", @"returns the winning game piece if it exists.");
+    XCTAssertEqualObjects(winner, @"X");
 }
 
 - (void)testReturnsNullIfNoWinner {
@@ -72,7 +72,7 @@
 
     NSString *winner = [rulebook getWinningPiece];
 
-    XCTAssertEqualObjects(winner, NULL, @"returns null if a winner does not exist.");
+    XCTAssertEqualObjects(winner, NULL);
 }
 
 - (void)testReturnsTrueIfGameIsADraw {
@@ -86,7 +86,7 @@
 
     Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
-    XCTAssertTrue([rulebook isDraw], @"returns true if the game is a draw.");
+    XCTAssertTrue([rulebook isDraw]);
 }
 
 - (void)testReturnsFalseIfAWinnerIsFound {
@@ -100,7 +100,7 @@
 
     Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
-    XCTAssertFalse([rulebook isDraw], @"returns false if a winner is found.");
+    XCTAssertFalse([rulebook isDraw]);
 }
 
 - (void)testReturnsFalseIfTheBoardIsNotFull {
@@ -114,7 +114,7 @@
 
     Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
-    XCTAssertFalse([rulebook isDraw], @"returns false if the board is not full.");
+    XCTAssertFalse([rulebook isDraw]);
 }
 
 - (void)testReturnsTrueIfTheGameIsOverWithAWinner {
@@ -128,7 +128,7 @@
 
     Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
-    XCTAssertTrue([rulebook gameOver], @"returns true if the game is over with a winner.");
+    XCTAssertTrue([rulebook gameOver]);
 }
 
 - (void)testReturnsTrueIfTheGameIsOverWithADraw {
@@ -142,7 +142,7 @@
 
     Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
-    XCTAssertTrue([rulebook gameOver], @"returns true if the game is over with a draw.");
+    XCTAssertTrue([rulebook gameOver]);
 }
 
 - (void)testReturnsFalseIfTheGameIsNotOver {
@@ -156,7 +156,7 @@
 
     Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
-    XCTAssertFalse([rulebook gameOver], @"returns false if the game is not over.");
+    XCTAssertFalse([rulebook gameOver]);
 }
 
 @end
