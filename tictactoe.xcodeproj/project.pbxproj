@@ -129,6 +129,7 @@
 		06AE50E91B3F712D009D2E42 /* tictactoe */ = {
 			isa = PBXGroup;
 			children = (
+				06F4ECF21B4DA1A800148ACC /* ai */,
 				06AE50EA1B3F712D009D2E42 /* main.m */,
 				06AE51091B43742E009D2E42 /* Board.h */,
 				06AE50F61B3F9A79009D2E42 /* Board.m */,
@@ -136,16 +137,12 @@
 				06AE510E1B45994E009D2E42 /* Human.m */,
 				06AE51161B45C482009D2E42 /* IOttt.m */,
 				06AE51191B45C4AA009D2E42 /* IOttt.h */,
-				06F4ECBC1B4A0D6D00148ACC /* Ai.m */,
-				06F4ECBF1B4A0D7D00148ACC /* Ai.h */,
 				06F4ECC21B4A33DC00148ACC /* Config.m */,
 				06F4ECC51B4A33F300148ACC /* Config.h */,
 				06F4ECC81B4A615D00148ACC /* Validator.m */,
 				06F4ECCB1B4A616D00148ACC /* Validator.h */,
 				06F4ECCE1B4AC43C00148ACC /* Rulebook.m */,
 				06F4ECD11B4AC44D00148ACC /* Rulebook.h */,
-				06F4ECD41B4B317F00148ACC /* HardAi.m */,
-				06F4ECD71B4B319200148ACC /* HardAi.h */,
 				06F4ECDA1B4C46FF00148ACC /* Game.m */,
 				06F4ECDD1B4C470D00148ACC /* Game.h */,
 				06F4ECE01B4C77A300148ACC /* Messenger.m */,
@@ -157,15 +154,14 @@
 		06AE50FD1B407832009D2E42 /* specs */ = {
 			isa = PBXGroup;
 			children = (
+				06F4ECF31B4DA1DF00148ACC /* ai */,
 				06AE51131B45BD71009D2E42 /* mocks */,
 				06AE51071B40904F009D2E42 /* BoardTest.m */,
 				06AE50FE1B407832009D2E42 /* Supporting Files */,
 				06AE51111B459C8F009D2E42 /* HumanTest.m */,
-				06F4ECC01B4A0DA500148ACC /* EasyAiTest.m */,
 				06F4ECC61B4A341000148ACC /* ConfigTest.m */,
 				06F4ECCC1B4A63C300148ACC /* ValidatorTest.m */,
 				06F4ECD21B4AC48F00148ACC /* RulebookTest.m */,
-				06F4ECD81B4B31C900148ACC /* HardAiTest.m */,
 				06F4ECDE1B4C472A00148ACC /* GameTest.m */,
 				06F4ECE41B4C77CE00148ACC /* MessengerTest.m */,
 			);
@@ -187,6 +183,29 @@
 				06AE511A1B48B5EB009D2E42 /* IOMock.h */,
 			);
 			name = mocks;
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		06F4ECF21B4DA1A800148ACC /* ai */ = {
+			isa = PBXGroup;
+			children = (
+				06F4ECD71B4B319200148ACC /* HardAi.h */,
+				06F4ECD41B4B317F00148ACC /* HardAi.m */,
+				06F4ECBF1B4A0D7D00148ACC /* Ai.h */,
+				06F4ECBC1B4A0D6D00148ACC /* Ai.m */,
+			);
+			name = ai;
+			path = Ai;
+			sourceTree = "<group>";
+		};
+		06F4ECF31B4DA1DF00148ACC /* ai */ = {
+			isa = PBXGroup;
+			children = (
+				06F4ECC01B4A0DA500148ACC /* EasyAiTest.m */,
+				06F4ECD81B4B31C900148ACC /* HardAiTest.m */,
+			);
+			name = ai;
+			path = Ai;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
