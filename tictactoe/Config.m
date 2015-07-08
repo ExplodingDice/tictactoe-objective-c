@@ -8,11 +8,12 @@
 
 @implementation Config : NSObject
 
-- (id)initWithIO:(IOttt *)io_ andValidator:(Validator *)validator_
+- (id)initWithIO:(IOttt *)io_ andMessenger:(Messenger *)messenger_ andValidator:(Validator *)validator_
 {
     self = [super init];
     if (self) {
         self.io = io_;
+        self.messenger = messenger_;
         self.validator = validator_;
     }
     return self;
@@ -50,7 +51,7 @@
                 @"board"    : board,
                 @"playerOne": human,
                 @"playerTwo": opponent,
-                @"io"       : self.io,
+                @"messenger": self.messenger,
                 @"validator": self.validator,
                 @"rules"    : rules
             };
