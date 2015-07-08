@@ -50,4 +50,28 @@
     [self.io putOut:message];
 }
 
+- (NSMutableString *)format:(NSArray *)row {
+    NSMutableString *message = [NSMutableString string];
+    
+    for (int i = 0; i < [row count]; i++) {
+        [message appendString:row[i]];
+        
+        if (i != 2)
+            [message appendString:@" | "];
+    }
+    
+    return message;
+}
+
+- (void)gameboard:(NSArray *)board {
+    for (int i = 0; i < [board count]; i++) {
+        [self.io putOut:[self format:board[i]]];
+         
+        if (i != 2)
+            [self.io putOut:@"---------"];
+    }
+    
+    [self.io putOut:@"\n\n"];
+}
+
 @end

@@ -102,4 +102,22 @@
     XCTAssertEqualObjects(ioMock.outputs, @[@"X wins!"]);
 }
 
+- (void)testDisplaysA3x3Gameboard {
+    IOMock *ioMock = [[IOMock alloc] init];
+    ioMock.outputs = [NSMutableArray array];
+    
+    Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
+    [messenger gameboard:@[@[@"1", @" ", @" "],
+                           @[@" ", @"2", @" "],
+                           @[@" ", @" ", @"3"]]];
+    
+    NSArray *expectedOutput = @[@"1 |   |  ",
+                                @"---------",
+                                @"  | 2 |  ",
+                                @"---------",
+                                @"  |   | 3", @"\n\n"];
+    
+    XCTAssertEqualObjects(ioMock.outputs, expectedOutput);
+}
+
 @end

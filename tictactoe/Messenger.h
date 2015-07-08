@@ -16,6 +16,7 @@
 - (void)welcome;
 - (void)drawGame;
 - (void)winnerFound:(NSString *)winnerPiece;
+- (void)gameboard:(NSArray *)board;
 
 @end
 
