@@ -3,8 +3,8 @@
 
 @interface Board : NSObject
 
-@property NSMutableDictionary *gameboard;
-@property int dimensions;
+@property (nonatomic) NSMutableDictionary *gameboard;
+@property (nonatomic) int dimensions;
 
 - (void)createBoard:(int)dimensions;
 - (void)placePlayerPiece:(NSString *)playerPiece atCellLocation:(NSNumber *)cellLocation;

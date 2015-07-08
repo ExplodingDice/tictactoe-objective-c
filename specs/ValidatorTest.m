@@ -31,7 +31,7 @@
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
     NSString *opponent = [validator promptForOpponent:@[@"e", @"h"]];
 
-    XCTAssertEqualObjects(opponent, @"e", @"returns a valid opponent selection.");
+    XCTAssertEqualObjects(opponent, @"e");
 }
 
 - (void)testPromptsForAnOpponentUntilHardIsSelected {
@@ -47,7 +47,7 @@
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
     NSString *opponent = [validator promptForOpponent:@[@"e", @"h"]];
 
-    XCTAssertEqualObjects(opponent, @"h", @"returns a valid opponent selection.");
+    XCTAssertEqualObjects(opponent, @"h");
 }
 
 - (void)testPromptsForAMoveUntilAnAvailableCellIsSelected {
@@ -62,9 +62,9 @@
     ioMock.inputs = testInputs;
     
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:(Messenger *)messenger];
-    NSString *move = [validator promptForMove:@[@1, @2, @3]];
+    NSNumber *move = [validator promptForMove:@[@1, @2, @3]];
     
-    XCTAssertEqualObjects(move, @2, @"returns a valid opponent selection.");
+    XCTAssertEqualObjects(move, @2);
 }
 
 @end

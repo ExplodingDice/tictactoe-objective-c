@@ -15,11 +15,11 @@
 }
 
 - (BOOL)aiTurn {
-    return [[self rulebook] currentPlayerPiece] == [self playerPiece];
+    return [self.rulebook currentPlayerPiece] == self.playerPiece;
 }
 
 - (BOOL)aiWins {
-    return [[self rulebook] getWinningPiece] == [self playerPiece];
+    return [self.rulebook getWinningPiece] == self.playerPiece;
 }
 
 - (int)gameStateScoring:(int)depth {
@@ -62,10 +62,10 @@
     if ([[self rulebook] gameOver])
         return [NSNumber numberWithInt:[self gameStateScoring:depth]];
 
-    for (NSNumber *cell in [self board].availableCells) {
-        [[self board] placePlayerPiece:[[self rulebook] currentPlayerPiece] atCellLocation:cell];
+    for (NSNumber *cell in self.board.availableCells) {
+        [self.board placePlayerPiece:[self.rulebook currentPlayerPiece] atCellLocation:cell];
         scores[cell] = [self minimax:[[NSMutableDictionary alloc] init] withDepth:depth + 1];
-        [[self board] resetCellAt:cell];
+        [self.board resetCellAt:cell];
     }
     
     if (depth == 0) {

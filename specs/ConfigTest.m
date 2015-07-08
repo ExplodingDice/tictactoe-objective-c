@@ -31,7 +31,7 @@
 
     NSString *className = NSStringFromClass([[config getSettings][@"board"] class]);
 
-    XCTAssertEqualObjects(className, @"Board", @"creates a board.");
+    XCTAssertEqualObjects(className, @"Board");
 }
 
 - (void)testCreatesAnEasyAIPlayer {
@@ -46,7 +46,7 @@
 
     NSString *className = NSStringFromClass([[config getSettings][@"playerTwo"] class]);
 
-    XCTAssertEqualObjects(className, @"Ai", @"creates an easy AI player.");
+    XCTAssertEqualObjects(className, @"Ai");
 }
 
 - (void)testCreatesAHardAIPlayer {
@@ -61,7 +61,7 @@
 
     NSString *className = NSStringFromClass([[config getSettings][@"playerTwo"] class]);
 
-    XCTAssertEqualObjects(className, @"HardAi", @"creates a hard AI player.");
+    XCTAssertEqualObjects(className, @"HardAi");
 }
 
 - (void)testCreatesAHumanPlayer {
@@ -76,7 +76,7 @@
 
     NSString *className = NSStringFromClass([[config getSettings][@"playerOne"] class]);
 
-    XCTAssertEqualObjects(className, @"Human", @"creates a Human player.");
+    XCTAssertEqualObjects(className, @"Human");
 }
 
 - (void)testCreatesRules {
@@ -91,7 +91,7 @@
 
     NSString *className = NSStringFromClass([[config getSettings][@"rules"] class]);
 
-    XCTAssertEqualObjects(className, @"Rulebook", @"creates rules.");
+    XCTAssertEqualObjects(className, @"Rulebook");
 }
 
 - (void)testAssignsMessengerToSettings {
@@ -106,7 +106,7 @@
 
     NSString *className = NSStringFromClass([[config getSettings][@"messenger"] class]);
 
-    XCTAssertEqualObjects(className, @"Messenger", @"creates messenger.");
+    XCTAssertEqualObjects(className, @"Messenger");
 }
 
 - (void)testAssignsValidatorToSettings {
@@ -121,7 +121,7 @@
 
     NSString *className = NSStringFromClass([[config getSettings][@"validator"] class]);
 
-    XCTAssertEqualObjects(className, @"Validator", @"assigns validator to settings.");
+    XCTAssertEqualObjects(className, @"Validator");
 }
 
 @end

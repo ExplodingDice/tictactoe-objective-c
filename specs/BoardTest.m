@@ -28,7 +28,7 @@
                                 @7: @" ", @8: @" ", @9: @" "
                                 };
     
-    XCTAssertEqualObjects(testBoard.gameboard, gameboard, "creates a gameboard with 9 cells.");
+    XCTAssertEqualObjects(testBoard.gameboard, gameboard);
 }
 
 - (void)testCreatesABoardOfSize16 {
@@ -41,20 +41,20 @@
                                 @13: @" ", @14: @" ", @15: @" ", @16: @" "
                                 };
     
-    XCTAssertEqualObjects(testBoard.gameboard, gameboard, "creates a gameboard with 16 cells.");
+    XCTAssertEqualObjects(testBoard.gameboard, gameboard);
 }
 
 - (void)testReturnsTheBoardDimensions {
     [testBoard createBoard:3];
 
-    XCTAssertEqual(testBoard.dimensions, 3, "returns gameboard dimensions.");
+    XCTAssertEqual(testBoard.dimensions, 3);
 }
 
 - (void)testPlacesAPieceOnTheBoard {
     [testBoard createBoard:3];
     [testBoard placePlayerPiece:@"X" atCellLocation:@1];
 
-    XCTAssertEqualObjects(testBoard.gameboard[@1], @"X", "places a piece on the gameboard.");
+    XCTAssertEqualObjects(testBoard.gameboard[@1], @"X");
 }
 
 - (void)testResetsCellOnTheBoard {
@@ -62,20 +62,20 @@
     [testBoard placePlayerPiece:@"X" atCellLocation:@1];
     [testBoard resetCellAt:@1];
     
-    XCTAssertEqualObjects(testBoard.gameboard[@1], @" ", "places a piece on the gameboard.");
+    XCTAssertEqualObjects(testBoard.gameboard[@1], @" ");
 }
 
 - (void)testReturnsTrueIfTheCellIsOccupied {
     [testBoard createBoard:3];
     [testBoard placePlayerPiece:@"X" atCellLocation:@5];
 
-    XCTAssertTrue([testBoard isCellOccupied:@5], "evaluates true if a cell is occupied.");
+    XCTAssertTrue([testBoard isCellOccupied:@5]);
 }
 
 - (void)testReturnsFalseIfTheCellIsNotOccupied {
     [testBoard createBoard:3];
 
-    XCTAssertFalse([testBoard isCellOccupied:@4], "evaluates false if a cell is not occupied.");
+    XCTAssertFalse([testBoard isCellOccupied:@4]);
 }
 
 - (void)testAllAvailableCellLocations {
@@ -84,7 +84,7 @@
     [testBoard placePlayerPiece:@"O" atCellLocation:@8];
     NSArray *keyList = @[@1, @2, @4, @5, @6, @7, @9];
 
-    XCTAssertEqualObjects([testBoard availableCells], keyList, "returns a sorted collection of keys from all available cell locations.");
+    XCTAssertEqualObjects([testBoard availableCells], keyList);
 }
 
 @end
