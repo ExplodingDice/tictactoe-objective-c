@@ -59,7 +59,7 @@
 }
 
 - (NSNumber *)minimax:(NSMutableDictionary *)scores withDepth:(int)depth {
-    if ([[self rulebook] gameOver])
+    if ([[self rulebook] gameOver] || depth == 7)
         return [NSNumber numberWithInt:[self gameStateScoring:depth]];
 
     for (NSNumber *cell in self.board.availableCells) {

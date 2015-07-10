@@ -18,9 +18,9 @@
     NSUInteger cellCount = [self.board.availableCells count];
     
     if (cellCount % 2 == 0) {
-        return self.playerOne;
-    } else {
         return self.playerTwo;
+    } else {
+        return self.playerOne;
     }
 }
 

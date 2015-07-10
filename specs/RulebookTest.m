@@ -23,7 +23,7 @@
 
     Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
 
-    XCTAssertEqualObjects([rulebook currentPlayerPiece], @"O");
+    XCTAssertEqualObjects([rulebook currentPlayerPiece], @"X");
 }
 
 - (void)testReturnsPlayerTwoOnOddCellCount {
@@ -33,7 +33,7 @@
     
     Rulebook *rulebook = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
     
-    XCTAssertEqualObjects([rulebook currentPlayerPiece], @"X");
+    XCTAssertEqualObjects([rulebook currentPlayerPiece], @"O");
 }
 
 - (void)testReturnsTheWinningGamePieceIfOneExists {

@@ -29,7 +29,7 @@
     Messenger *messenger = [[Messenger alloc] initWithIO:ioMock];
     Validator *validator = [[Validator alloc] initWithIO:ioMock andMessenger:messenger];
     Board *testBoard = [[Board alloc] init];
-    Rulebook *testRules = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"X" andPlayerTwo:@"O"];
+    Rulebook *testRules = [[Rulebook alloc] initWithBoard:testBoard PlayerOne:@"O" andPlayerTwo:@"X"];
     Human *testHuman = [[Human alloc] initWithIO:ioMock andPlayerPiece:@"O"];
     HardAi *testAi = [[HardAi alloc] initWithBoard:testBoard Rulebook:testRules andPlayerPiece:@"X"];
     
@@ -67,19 +67,19 @@
     HardAi *testAi = [[HardAi alloc] initWithBoard:testBoard Rulebook:testRules andPlayerPiece:@"X"];
     
     NSMutableArray *testInputs = [NSMutableArray array];
-    [testInputs addObject:@"9"];
+    [testInputs addObject:@"3"];
     ioMock.inputs = testInputs;
     ioMock.outputs = [NSMutableArray array];
     [testBoard createBoard:3];
     
     [testBoard placePlayerPiece:@"X" atCellLocation:@1];
-    [testBoard placePlayerPiece:@"X" atCellLocation:@3];
     [testBoard placePlayerPiece:@"X" atCellLocation:@5];
     [testBoard placePlayerPiece:@"X" atCellLocation:@8];
     [testBoard placePlayerPiece:@"O" atCellLocation:@2];
     [testBoard placePlayerPiece:@"O" atCellLocation:@4];
-    [testBoard placePlayerPiece:@"O" atCellLocation:@6];
+    [testBoard placePlayerPiece:@"X" atCellLocation:@6];
     [testBoard placePlayerPiece:@"O" atCellLocation:@7];
+    [testBoard placePlayerPiece:@"O" atCellLocation:@9];
     
     NSDictionary *settings = @{
                                @"messenger": messenger,
@@ -89,7 +89,7 @@
                                @"validator": validator,
                                @"rules": testRules
                                };
-    
+
     Game *game = [[Game alloc] initWithSettings:settings];
     [game run];
     
